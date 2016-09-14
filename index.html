@@ -37,6 +37,39 @@
             position: absolute;
             top: -999em;
         }
+        .health-status {
+            border:1px solid #7b7b7b;
+            border-bottom-width:0;
+            border-right-width:0;
+            height:24px;
+            margin:0 auto;
+            width:24px;
+        }
+        .health-status button {
+            background:transparent url('assets/img/sprite.png') no-repeat 1px -27px;
+            border:2px solid white;
+            border-bottom-color:#7b7b7b;
+            border-right-color:#7b7b7b;
+            margin:0 auto;
+            height:25px;
+            width: 25px;
+        }
+        .health-status button:focus {
+            outline:none;
+        }
+        .health-status button:active {
+            border:1px solid #7b7b7b;
+            outline:none;
+        }
+        .health-status .dead {
+            background-position-x:-43px;
+        }
+        .health-status .anxious {
+            background-position-x:-21px;
+        }
+        .health-status .safe {
+            background-position-x:-65px;
+        }
         .digital {
             background:#000;
             color:#ff0000;
@@ -69,13 +102,55 @@
             border-top-color:#7b7b7b;
         }
         td {
-            border:2px solid white;
-            background:#bdbdbd;
-            border-bottom-color:#7b7b7b;
-            border-right-color:#7b7b7b;
-            height:12px;
+            background:#bdbdbd url('assets/img/sprite.png') no-repeat 15px 0;
+            border: 1px solid #7b7b7b;
+            border-width:1px 0 0 1px;
+            height:15px;
             padding:0;
+            width:15px;
+        }
+        .covered {
+            border-width:2px;
+            border-top-color:#fff;
+            border-left-color:#fff;
+            height:12px;
             width:12px;
+        }
+        .next-to-one-bomb {
+            background-position-x:0;
+        }
+        .next-to-two-bombs {
+            background-position-x:-15px;
+        }
+        .next-to-three-bombs {
+            background-position-x:-30px;
+        }
+        .next-to-four-bombs {
+            background-position-x:-45px;
+        }
+        .next-to-five-bombs {
+            background-position-x:-60px;
+        }
+        .next-to-six-bombs {
+            background-position-x:-75px;
+        }
+        .next-to-seven-bombs {
+            background-position:0 -15px;
+        }
+        .next-to-eight-bombs {
+            background-position:-15px -15px;
+        }
+        .bomb-marked {
+            background-position:-30px -15px;
+        }
+        .bomb-possibility {
+            background-position:-45px -15px;
+        }
+        .bomb-triggered {
+            background-position:-60px -15px;
+        }
+        .bomb {
+            background-position:-75px -15px;
         }
     </style>
 </head>
@@ -84,9 +159,13 @@
     <section>
         <dl>
             <dt class="show-for-sr">Mines remaining</dt>
-                <dd class="digital mines-remaining">99</dd>
+                <dd class="digital mines-remaining">099</dd>
             <dt class="show-for-sr">Game Status</dt>
-                <dd>Alive</dd>
+                <dd class="health-status">
+                    <button>
+                        <span class="show-for-sr">Alive</span>
+                    </button>
+                </dd>
             <dt class="show-for-sr">Time taken</dt>
                 <dd class="digital time-taken">000<span class="show-for-sr"> seconds</span></dd>
         </dl>
@@ -104,47 +183,47 @@
             <tbody>
                 <tr>
                     <th class="show-for-sr">Row 1</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
                 </tr>
                 <tr>
                     <th class="show-for-sr">Row 2</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class=""><span class="show-for-sr">Empty</span></td>
                 </tr>
                 <tr>
                     <th class="show-for-sr">Row 3</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="next-to-one-bomb"><span class="show-for-sr">Covered</span></td>
+                    <td class="next-to-two-bombs"><span class="show-for-sr">Covered</span></td>
+                    <td class="next-to-three-bombs"><span class="show-for-sr">Covered</span></td>
+                    <td class="next-to-four-bombs"><span class="show-for-sr">Covered</span></td>
+                    <td class="next-to-five-bombs"><span class="show-for-sr">Covered</span></td>
+                    <td class="next-to-six-bombs"><span class="show-for-sr">Covered</span></td>
+                    <td class="next-to-seven-bombs"><span class="show-for-sr">Covered</span></td>
+                    <td class="next-to-eight-bombs"><span class="show-for-sr">Covered</span></td>
+                    <td class="bomb-marked"><span class="show-for-sr">Covered</span></td>
+                    <td class="bomb-possibility"><span class="show-for-sr">Covered</span></td>
                 </tr>
                 <tr>
                     <th class="show-for-sr">Row 4</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="bomb-triggered"><span class="show-for-sr">Covered</span></td>
+                    <td class="bomb"><span class="show-for-sr">Covered</span></td>
                     <td class="covered"><span class="show-for-sr">Covered</span></td>
                     <td class="covered"><span class="show-for-sr">Covered</span></td>
                     <td class="covered"><span class="show-for-sr">Covered</span></td>
