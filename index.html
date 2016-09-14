@@ -116,40 +116,40 @@
             height:12px;
             width:12px;
         }
-        .next-to-one-bomb {
+        .next-to-one-mine {
             background-position-x:0;
         }
-        .next-to-two-bombs {
+        .next-to-two-mines {
             background-position-x:-15px;
         }
-        .next-to-three-bombs {
+        .next-to-three-mines {
             background-position-x:-30px;
         }
-        .next-to-four-bombs {
+        .next-to-four-mines {
             background-position-x:-45px;
         }
-        .next-to-five-bombs {
+        .next-to-five-mines {
             background-position-x:-60px;
         }
-        .next-to-six-bombs {
+        .next-to-six-mines {
             background-position-x:-75px;
         }
-        .next-to-seven-bombs {
+        .next-to-seven-mines {
             background-position:0 -15px;
         }
-        .next-to-eight-bombs {
+        .next-to-eight-mines {
             background-position:-15px -15px;
         }
-        .bomb-marked {
+        .mine-marked {
             background-position:-30px -15px;
         }
-        .bomb-possibility {
+        .mine-possibility {
             background-position:-45px -15px;
         }
-        .bomb-triggered {
+        .mine-triggered {
             background-position:-60px -15px;
         }
-        .bomb {
+        .mine {
             background-position:-75px -15px;
         }
     </style>
@@ -178,52 +178,57 @@
                     <th>Column 3</th>
                     <th>Column 4</th>
                     <th>Column 5</th>
+                    <th>Column 6</th>
+                    <th>Column 7</th>
+                    <th>Column 8</th>
+                    <th>Column 9</th>
+                    <th>Column 10</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th class="show-for-sr">Row 1</th>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
                 </tr>
                 <tr>
                     <th class="show-for-sr">Row 2</th>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
-                    <td class=""><span class="show-for-sr">Empty</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
                 </tr>
                 <tr>
                     <th class="show-for-sr">Row 3</th>
-                    <td class="next-to-one-bomb"><span class="show-for-sr">Covered</span></td>
-                    <td class="next-to-two-bombs"><span class="show-for-sr">Covered</span></td>
-                    <td class="next-to-three-bombs"><span class="show-for-sr">Covered</span></td>
-                    <td class="next-to-four-bombs"><span class="show-for-sr">Covered</span></td>
-                    <td class="next-to-five-bombs"><span class="show-for-sr">Covered</span></td>
-                    <td class="next-to-six-bombs"><span class="show-for-sr">Covered</span></td>
-                    <td class="next-to-seven-bombs"><span class="show-for-sr">Covered</span></td>
-                    <td class="next-to-eight-bombs"><span class="show-for-sr">Covered</span></td>
-                    <td class="bomb-marked"><span class="show-for-sr">Covered</span></td>
-                    <td class="bomb-possibility"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
                 </tr>
                 <tr>
                     <th class="show-for-sr">Row 4</th>
-                    <td class="bomb-triggered"><span class="show-for-sr">Covered</span></td>
-                    <td class="bomb"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
+                    <td class="covered"><span class="show-for-sr">Covered</span></td>
                     <td class="covered"><span class="show-for-sr">Covered</span></td>
                     <td class="covered"><span class="show-for-sr">Covered</span></td>
                     <td class="covered"><span class="show-for-sr">Covered</span></td>
@@ -314,6 +319,80 @@
             </tbody>
         </table>
     </section>
-    <script type="text/javascript" src="node_modules/joose-utils/"></script>
+    <script type="text/javascript" src="node_modules/joose-utils/js/joose-utils.min.js"></script>
+    <script type="text/javascript">
+
+        // set config
+        var config = {
+            columns: 10,
+            rows: 10
+        }
+
+        // game status :::::: TO MAKE PRIVATE
+        var gameStatus = {
+            health: 'alive',
+            numberOfMines: 10,
+            board: [
+                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
+                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty']
+            ]
+        };
+
+        // bind elements
+        var gameTable = document.querySelector('table');
+        var gameButton = document.querySelector('.health-status button');
+
+        // generate a random number between 0 and max supplied
+        var getRandomNumber = function(max) {
+            return (Math.floor(Math.random() * max));
+        };
+        
+        // assign a state to a table cell
+        var assignStates = function(state, limit) {
+
+            for (var i=1; i<limit; i++) {
+
+                var x = getRandomNumber(config.columns);
+                var y = getRandomNumber(config.rows);
+
+                gameStatus.board[x][y] = state;
+
+            }
+
+        }
+
+        var renderBoard = function() {
+            for (var i=1; i<=gameStatus.board.length; i++) {
+                for (var j=1; j<=gameStatus.board[0].length; j++) {
+                    
+                    // temp to show state
+                    joose.utils.removeClass(gameTable.querySelector('tr:nth-child(' + i + ') td:nth-child(' + (j + 1) + ')'), 'covered');
+                    
+                    joose.utils.addClass(gameTable.querySelector('tr:nth-child(' + i + ') td:nth-child(' + (j + 1) + ')'), gameStatus.board[i][j]);
+                }
+            }
+        }
+
+        // setup a new game
+        var setupNewGame = function() {
+            assignStates('mine', gameStatus.numberOfMines);
+            renderBoard();
+        };
+
+        // bind events
+        gameButton.addEventListener('click', setupNewGame);
+
+        // initialise new game on page load
+        setupNewGame();
+
+    </script>
 </body>
 </html>
