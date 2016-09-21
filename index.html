@@ -141,11 +141,11 @@
         .next-to-eight-mines {
             background-position:-15px -15px;
         }
-        .mine-marked {
-            background-position:-30px -15px;
+        .covered.mine-marked {
+            background:#bdbdbd url('assets/img/sprite.png') no-repeat -30px -15px;
         }
-        .mine-possibility {
-            background-position:-45px -15px;
+        .covered.mine-possibility {
+            background:#bdbdbd url('assets/img/sprite.png') no-repeat -45px -15px;
         }
         .mine-triggered {
             background-position:-60px -15px;
@@ -477,10 +477,40 @@
         }
 
         var assignEvents = function() {
-            tableCells.forEach(function(tableCell, index) {
-                tableCell.addEventListener('click', function() {
-                    joose.utils.removeClass(event.target, 'covered');
-                });
+            
+            // disable showing the context menu with a right click
+            gameTable.addEventListener('contextmenu', function(event) {
+                event.preventDefault();
+                if (!joose.utils.hasClass(event.target, 'covered')) return false;
+                switch (true) {
+                    
+                    // marked as a mine
+                    case (joose.utils.hasClass(event.target, 'mine-marked')):
+                        joose.utils.removeClass(event.target, 'mine-marked');
+                        joose.utils.addClass(event.target, 'mine-possibility');
+                        break;
+
+                    // marked as a mine possiblity
+                    case (joose.utils.hasClass(event.target, 'mine-possibility')):
+                        joose.utils.removeClass(event.target, 'mine-possibility');
+                        break;
+
+                    // unmarked
+                    default:
+                        joose.utils.addClass(event.target, 'mine-marked');
+
+                }
+                return false;
+            });
+
+            gameTable.addEventListener('click', function(event) {
+                joose.utils.removeClass(event.target, 'covered');
+                // assign the class in the game board object (private)
+                // get the position in game board
+                // get surrounding cells
+                // if empty uncover too and get surrounding cells
+                // if indicator uncover only
+                // if mine, explode
             });
         };
 
