@@ -110,6 +110,7 @@
             width:15px;
         }
         .covered {
+            background-image: none;
             border-width:2px;
             border-top-color:#fff;
             border-left-color:#fff;
@@ -348,6 +349,7 @@
 
         // bind elements
         var gameTable = document.querySelector('table');
+        var tableCells = document.querySelectorAll('td');
         var gameButton = document.querySelector('.health-status button');
 
         // generate a random number between 0 and max supplied
@@ -376,20 +378,19 @@
         }
 
         var cellPositionsToCheck = [
-                [-1, -1],
-                [0, -1],
-                [1, -1],
-                [-1, 0],
-                // [0, 0] // this is the mine
-                [1, 0],
-                [-1, 1],
-                [0, 1],
-                [1, 1]
-            ];
+            [-1, -1],
+            [0, -1],
+            [1, -1],
+            [-1, 0],
+            // [0, 0] // this is the mine
+            [1, 0],
+            [-1, 1],
+            [0, 1],
+            [1, 1]
+        ];
 
         var getSurroundingCells = function(sourceCells) {
 
-            // loop through each mine
             var cellsToCheck = []
 
             sourceCells.forEach(function(sourceCell, index) {
@@ -404,8 +405,6 @@
                         cellsToCheck.push([xToCheck, yToCheck]);
                     }
                 })
-
-
 
             });
 
@@ -423,9 +422,46 @@
                 if (gameStatus.board[x][y] !== 'mine') {
                 
                     // check surrounding cells for other mines
+                    var surroundingCells = getSurroundingCells([[x, y]]);
+                    var mineCount = 0;
+                    var classText = '';
 
-                    // temp
-                    gameStatus.board[x][y] = "next-to-one-mine";
+                    surroundingCells.forEach(function(surroundingCell, index) {
+                        if (gameStatus.board[surroundingCell[0]][surroundingCell[1]] === 'mine') {
+                            mineCount++;
+                        }
+                    });
+
+                    switch (mineCount) {
+                        case 8:
+                            classText = 'next-to-eight-mines';
+                            break;
+                        case 7:
+                            classText = 'next-to-seven-mines';
+                            break;
+                        case 6:
+                            classText = 'next-to-six-mines';
+                            break;
+                        case 5:
+                            classText = 'next-to-five-mines';
+                            break;
+                        case 4:
+                            classText = 'next-to-four-mines';
+                            break;
+                        case 3:
+                            classText = 'next-to-three-mines';
+                            break;
+                        case 2:
+                            classText = 'next-to-two-mines';
+                            break;
+                        case 1:
+                        default:
+                            classText = 'next-to-one-mine';
+                            break;
+                    }
+
+                    // assign state
+                    gameStatus.board[x][y] = classText;
                 }
                 
                 // set state / indicator
@@ -435,20 +471,25 @@
         var renderBoard = function() {
             for (var i=1; i<=gameStatus.board.length; i++) {
                 for (var j=1; j<=gameStatus.board[0].length; j++) {
-                    
-                    // temp to show state
-                    joose.utils.removeClass(gameTable.querySelector('tr:nth-child(' + i + ') td:nth-child(' + (j + 1) + ')'), 'covered');
-                    
                     joose.utils.addClass(gameTable.querySelector('tr:nth-child(' + i + ') td:nth-child(' + (j + 1) + ')'), gameStatus.board[i-1][j-1]);
                 }
             }
         }
+
+        var assignEvents = function() {
+            tableCells.forEach(function(tableCell, index) {
+                tableCell.addEventListener('click', function() {
+                    joose.utils.removeClass(event.target, 'covered');
+                });
+            });
+        };
 
         // setup a new game
         var setupNewGame = function() {
             var mines = assignStates('mine', gameStatus.numberOfMines);
             assignIndicators(mines);
             renderBoard();
+            assignEvents();
         };
 
         // bind events
