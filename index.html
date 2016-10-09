@@ -161,6 +161,15 @@
 </head>
 <body>
     <h1>Minesweeper</h1>
+    <form id="gameConfig">
+        <label for="columns">Columns</label>
+        <input type="number" name="columns" id="columns" value="10" min="8" max="99" />
+        <label for="rows">Rows</label>
+        <input type="number" name="rows" id="rows" value="10" min="1" max="99" />
+        <label for="mines">Mines</label>
+        <input type="number" name="mines" id="mines" value="10" />
+        <input type="submit" value="Create board" />
+    </form>
     <section>
         <dl>
             <dt class="show-for-sr">Mines remaining</dt>
@@ -177,300 +186,18 @@
         <table>
             <thead class="show-for-sr">
                 <tr>
-                    <th></th>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                    <th>Column 3</th>
-                    <th>Column 4</th>
-                    <th>Column 5</th>
-                    <th>Column 6</th>
-                    <th>Column 7</th>
-                    <th>Column 8</th>
-                    <th>Column 9</th>
-                    <th>Column 10</th>
+                    <th scope="col">Row numbers</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th class="show-for-sr">Row 1</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 2</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 3</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 4</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 5</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 6</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 7</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 8</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 9</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 10</th>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                    <td class="covered"><span class="show-for-sr">Covered</span></td>
-                </tr>
             </tbody>
         </table>
 
         <table id="table2">
-            <thead class="show-for-sr">
-                <tr>
-                    <th></th>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                    <th>Column 3</th>
-                    <th>Column 4</th>
-                    <th>Column 5</th>
-                    <th>Column 6</th>
-                    <th>Column 7</th>
-                    <th>Column 8</th>
-                    <th>Column 9</th>
-                    <th>Column 10</th>
-                </tr>
+            <thead>
+                <tr></tr>
             </thead>
             <tbody>
-                <tr>
-                    <th class="show-for-sr">Row 1</th>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 2</th>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 3</th>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 4</th>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 5</th>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 6</th>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 7</th>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 8</th>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 9</th>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                </tr>
-                <tr>
-                    <th class="show-for-sr">Row 10</th>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                    <td class=""><span class="show-for-sr"></span></td>
-                </tr>
             </tbody>
         </table>
     </section>
@@ -479,267 +206,186 @@
 
         // set config
         var config = {
-            columns: 10,
-            rows: 10
+            contents: {
+                "mine": "mine",
+                "next-to-1": "next-to-one-mine",
+                "next-to-2": "next-to-two-mines",
+                "next-to-3": "next-to-three-mines",
+                "next-to-4": "next-to-four-mines",
+                "next-to-5": "next-to-five-mines",
+                "next-to-6": "next-to-six-mines",
+                "next-to-7": "next-to-seven-mines",
+                "next-to-8": "next-to-eight-mines"
+            }
+        }
+
+        var Tile = function() {
+            this.contents = 'empty';
+            this.covered = true;
+            this.mark;
+            this.defused = false;
+            this.exploded = false;
+        }
+
+        Tile.prototype = {
+
+            // getters
+            getContents: function() {
+                return this.contents;
+            },
+            getMark: function() {
+                return this.contents;
+            },
+            getIsCovered: function() {
+                return this.covered;
+            },
+            getIsDefused: function() {
+                return this.defused;
+            },
+            getHasExploded: function() {
+                return this.exploded;
+            },
+
+            // setters
+            setContents: function(contents) {
+                this.contents = contents;
+            },
+            setMark: function(type) {
+                this.mark = type;
+            },
+            setAsUncovered: function() {
+                this.covered = false;
+            },
+            setAsDefused: function() {
+                this.defused = true;
+            },
+            setAsExploded: function() {
+                this.exploded = true;
+            }
         }
 
         // game status :::::: TO MAKE PRIVATE
         var gameStatus = {
             health: 'alive',
             numberOfMines: 10,
-            board: [
-                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
-                ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty']
-            ]
+            board: [],
+            noOfColumns: 10,
+            noOfRows: 10,
+            noOfMines: 10
         };
 
         // bind elements
-        var gameTable = document.querySelector('table');
-        var tableCells = document.querySelectorAll('td');
+        var gameTableBody = document.querySelector('tbody');
         var gameButton = document.querySelector('.health-status button');
+        var gameBoardHeaderRow = document.querySelector('thead tr');
+        var noOfColumns = document.getElementById('columns').value || config.noOfColumns;
+        var noOfRows = document.getElementById('rows').value || config.noOfRows;
+        var noOfMines = document.getElementById('mines').value || config.noOfMines;
 
         // generate a random number between 0 and max supplied
         var getRandomNumber = function(max) {
             return (Math.floor(Math.random() * max));
         };
         
-        // assign a state to a table cell
-        var assignStates = function(state, limit) {
+        var assignNoOfRowsAndColumns = function() {
+            
+            var row = [];
 
-            var coordinates = [];
-
-            for (var i=1; i<=limit; i++) {
-
-                var x = getRandomNumber(config.columns);
-                var y = getRandomNumber(config.rows);
-
-                gameStatus.board[x][y] = state;
-
-                coordinates.push([x, y])
-
+            for (var i=1; i<=noOfRows; i++) {
+                row.push(new Tile());
             }
 
-            return coordinates;
+            for (var j=1; j<=noOfRows; j++) {
+                gameStatus.board.push(row);
+            }
 
-        }
+        };
 
-        var cellPositionsToCheck = [
-            [-1, -1],
-            [0, -1],
-            [1, -1],
-            [-1, 0],
-            // [0, 0] // this is the mine
-            [1, 0],
-            [-1, 1],
-            [0, 1],
-            [1, 1]
-        ];
+        var assignMines = function() {
 
-        var getSurroundingCells = function(sourceCells) {
+            var mines = []
 
-            var cellsToCheck = []
+            for (var i=1; i<=noOfMines; i++) {
 
-            sourceCells.forEach(function(sourceCell, index) {
-                
-                var x = sourceCell[0];
-                var y = sourceCell[1];
-                
-                cellPositionsToCheck.forEach(function(cell, index) {
-                    var xToCheck = x + cell[0];
-                    var yToCheck = y + cell[1];
-                    if (xToCheck > -1 && xToCheck < config.columns && yToCheck > -1 && yToCheck < config.rows) {
-                        cellsToCheck.push([xToCheck, yToCheck]);
-                    }
-                })
+                var mineX = getRandomNumber(noOfColumns);
 
+                var mineY = getRandomNumber(noOfRows);
+
+                // gameStatus.board[mineY][mineX].setContents(config.contents.mine);
+                mines.push(
+                    [mineX, mineY]
+                )
+            }
+
+            console.log(mines);
+
+            mines.forEach(function(mine) {
+                gameStatus.board[mineX][mineY].setContents(config.contents.mine);
             });
 
-            return cellsToCheck;
-
         }
 
-        var assignIndicators = function(mines) {
+        var renderTableHeader = function() {
+            for (var i=1; i<=noOfColumns; i++) {
+                var th = document.createElement('th');
+                th.setAttribute('scope', 'col');
+                th.innerHTML = 'Column ' + i;
+                gameBoardHeaderRow.appendChild(th);
+            }
+        }
 
-            var indicativeCells = getSurroundingCells(mines);
+        var renderTableBody = function() {
 
-            indicativeCells.forEach(function(cell, index) {
-                var x = cell[0];
-                var y = cell[1];
-                if (gameStatus.board[x][y] !== 'mine') {
+            for (var i=1; i<=noOfRows; i++) {
                 
-                    // check surrounding cells for other mines
-                    var surroundingCells = getSurroundingCells([[x, y]]);
-                    var mineCount = 0;
-                    var classText = '';
+                var tr = document.createElement('tr');
 
-                    surroundingCells.forEach(function(surroundingCell, index) {
-                        if (gameStatus.board[surroundingCell[0]][surroundingCell[1]] === 'mine') {
-                            mineCount++;
-                        }
-                    });
+                var th = document.createElement('th');
+                th.setAttribute('scope', 'row');
+                th.setAttribute('class', 'show-for-sr');
+                th.innerHTML = 'Row ' + i;
 
-                    switch (mineCount) {
-                        case 8:
-                            classText = 'next-to-eight-mines';
-                            break;
-                        case 7:
-                            classText = 'next-to-seven-mines';
-                            break;
-                        case 6:
-                            classText = 'next-to-six-mines';
-                            break;
-                        case 5:
-                            classText = 'next-to-five-mines';
-                            break;
-                        case 4:
-                            classText = 'next-to-four-mines';
-                            break;
-                        case 3:
-                            classText = 'next-to-three-mines';
-                            break;
-                        case 2:
-                            classText = 'next-to-two-mines';
-                            break;
-                        case 1:
-                        default:
-                            classText = 'next-to-one-mine';
-                            break;
-                    }
+                tr.appendChild(th);
 
-                    // assign state
-                    gameStatus.board[x][y] = classText;
+                for (var j=1; j<=noOfColumns; j++) {
+            
+                    var tileValue = gameStatus.board[i-1][j-1].getContents();
+
+                    var td = document.createElement('td');
+                    td.setAttribute('class', tileValue);
+                    td.innerHTML = [
+                        '<span class="show-for-sr">',
+                            tileValue,
+                        '</span>'
+                    ].join('');
+
+                    tr.appendChild(td);
+
                 }
-                
-                // set state / indicator
-            })
+
+                gameTableBody.appendChild(tr);
+
+            }
         };
 
         var renderBoard = function() {
-            for (var i=1; i<=gameStatus.board.length; i++) {
-                for (var j=1; j<=gameStatus.board[0].length; j++) {
-                    joose.utils.addClass(gameTable.querySelector('tr:nth-child(' + i + ') td:nth-child(' + (j + 1) + ')'), gameStatus.board[i-1][j-1]);
-                    
-                    // temp
-                    joose.utils.addClass(document.querySelector('#table2 tr:nth-child(' + i + ') td:nth-child(' + (j + 1) + ')'), gameStatus.board[i-1][j-1]);
-                }
-            }
-        }
-
-        var assignEvents = function() {
-            
-            // disable showing the context menu with a right click
-            gameTable.addEventListener('contextmenu', function(event) {
-                event.preventDefault();
-                if (!joose.utils.hasClass(event.target, 'covered')) return false;
-                switch (true) {
-                    
-                    // marked as a mine
-                    case (joose.utils.hasClass(event.target, 'mine-marked')):
-                        joose.utils.removeClass(event.target, 'mine-marked');
-                        joose.utils.addClass(event.target, 'mine-possibility');
-                        break;
-
-                    // marked as a mine possiblity
-                    case (joose.utils.hasClass(event.target, 'mine-possibility')):
-                        joose.utils.removeClass(event.target, 'mine-possibility');
-                        break;
-
-                    // unmarked
-                    default:
-                        joose.utils.addClass(event.target, 'mine-marked');
-
-                }
-                return false;
-            });
-
-            gameTable.addEventListener('click', function(event) {
-                
-                // show the selected tile; this is the only action for tiles with indicators
-                joose.utils.removeClass(event.target, 'covered');
-                
-                // assign the class in the game board object (private)
-                // TODO
-
-                // get the position in game board object
-                var columns = event.target.parentNode.children;
-                var column;
-                var noOfColumns = columns.length;
-                for (var i=1; i<noOfColumns; i++) {
-                    if (columns[i] === event.target) {
-                        column = i -1;
-                    }
-                }
-                var rows = event.target.parentNode.parentNode.children;
-                var row;
-                var noOfRows = rows.length;
-                for (var j=0; j<noOfRows; j++) {
-                    if (rows[j] === event.target.parentNode) {
-                        row = j;
-                    }
-                }
-
-                switch (gameStatus.board[row][column]) {
-
-                    // if the tile selected is a mine, end the game
-                    case 'mine':
-                        joose.utils.addClass(document.querySelector('tr:nth-child(' + (row + 1) + ') td:nth-child(' + (column + 2) + ')'), 'mine-triggered');
-                        gameOver(false);
-                        break;
-
-                    case 'empty':
-                        uncoverSurroundingCells(column, row);
-                        break;
-
-                    default:
-                        // no other action needed, the tile is already uncovered
-                        break;
-                }
-                
-            });
-        };
-
-        var uncoverSurroundingCells = function(x, y) {
-            
-            // get surrounding cells
-            var selectedCellSurroundingCells = getSurroundingCells([[x,y]])
-
-            // if empty uncover too and get surrounding cells
-            selectedCellSurroundingCells.forEach(function(cell) {
-                if (gameStatus.board[cell[1]][cell[0]] !== 'mine') {
-                    joose.utils.removeClass(document.querySelector('tr:nth-child(' + (cell[1] + 1) + ') td:nth-child(' + (cell[0] + 2) + ')'), 'covered')
-                    /*if (gameStatus.board[cell[1]][cell[0]] === 'empty') {
-                        uncoverSurroundingCells(cell[0], cell[1])
-                    }*/
-                }
-            });
-
-        }
-
-        var gameOver = function(safe) {
-            if (safe) {
-                // show defused mines
-            } else {
-                joose.utils.addClass(document.querySelector('.health-status button'), 'dead');
-            }
+            renderTableHeader();
+            renderTableBody();
         };
 
         // setup a new game
         var setupNewGame = function() {
-            var mines = assignStates('mine', gameStatus.numberOfMines);
-            assignIndicators(mines);
+
+            assignNoOfRowsAndColumns();
+
+            assignMines();
+
+            // assignIndicators(mines);
             renderBoard();
-            assignEvents();
+            // assignEvents();
 
             // show game state visually (temp)
-            renderBoard(document.getElementById('table2'))
+            // renderBoard(document.getElementById('table2'))
         };
 
         // bind events
